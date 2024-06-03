@@ -1,0 +1,20 @@
+﻿@page
+@model entrainementAspNetCore.Pages.ArticleIndexModel
+@{
+}
+
+<h3>Liste des articles</h3>
+
+@if (!Model.Articles.Any())
+{
+    <p class="text-danger">@Model.ErrorMessage</p>
+}
+else
+{
+    <ul>
+        @foreach(var article in Model.Articles)
+        {
+            <li><a asp-page="/articleDetail" asp-route-reference="@article.Reference">@article.Nom</a></li>
+        }
+    </ul>
+}

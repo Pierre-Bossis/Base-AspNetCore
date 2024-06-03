@@ -1,0 +1,57 @@
+﻿@page
+@model entrainementAspNetCore.Pages.ArticleDetailModel
+@{
+}
+<link rel="stylesheet" href="/css/ArticleDetail.css" />
+@if (Model.article != null)
+{
+    <h2>@Model.article.Nom</h2>
+
+    <div class="row">
+        <div class="col-4">
+            <img src="https://www.hp.com/be-fr/shop/media/catalog/product/2/3/23c2_pavilion_tuffy_16_natural_silver_nt_5m_cus_1.jpg?store=be-fr&image-type=image&auto=webp&format=pjpg&width=640&height=800&fit=bounds&dpr=2.625" width="450" height="450" alt="@Model.article.Nom" />
+        </div>
+        <div class="col-8">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <td>@Model.article.Nom</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>@Model.article.Description</td>
+                    </tr>
+                    <tr>
+                        <th>Provenance</th>
+                        <td>@Model.article.Provenance</td>
+                    </tr>
+                    <tr>
+                        <th>Fournisseur</th>
+                        <td>@Model.article.Fournisseur</td>
+                    </tr>
+                    <tr>
+                        <th>Date de parution</th>
+                        <td>@Model.article.DateMiseEnLigne.ToString("D")</td>
+                    </tr>
+                    <tr>
+                        <th>Mots-clés</th>
+                        <td>@Model.article.MotsCles</td>
+                    </tr>
+                    <tr>
+                        <th>Catégorie</th>
+                        <td>@Model.article.Categorie</td>
+                    </tr>
+                    <tr>
+                        <th>Poids</th>
+                        <td>@Model.article.Poids kg</td>
+                    </tr>
+                    <tr>
+                        <th>Taille</th>
+                        <td>@Model.article.Taille cm</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

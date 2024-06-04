@@ -28,6 +28,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/articleindex">Articles</a>
                         </li>
+                        @if(string.IsNullOrEmpty(Context.Request.Cookies["token"]))
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/user/login">Login</a>
+                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/user/register">Register</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/user/logout">Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

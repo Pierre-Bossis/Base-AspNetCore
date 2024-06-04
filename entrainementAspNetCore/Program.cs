@@ -13,6 +13,8 @@ builder.Services.AddHttpClient("api", config =>
 });
 
 builder.Services.AddScoped<IArticleRepository,ArticleService>();
+builder.Services.AddScoped<IUserRepository,UserService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 

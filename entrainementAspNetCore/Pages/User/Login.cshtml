@@ -1,0 +1,17 @@
+﻿@page
+@model entrainementAspNetCore.Pages.User.LoginModel
+@{
+}
+
+<h2>Login Form</h2>
+
+<form method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" asp-for="Form.Email" />
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control" asp-for="Form.MotDePasse" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

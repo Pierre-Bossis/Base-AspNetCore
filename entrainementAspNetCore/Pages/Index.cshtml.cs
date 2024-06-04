@@ -10,13 +10,13 @@ namespace entrainementAspNetCore.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public string token { get; set; }
-        public IndexModel(ILogger<IndexModel> logger, IHttpContextAccessor httpContextAccessor)
+        //public string token { get; set; }
+        public IndexModel(ILogger<IndexModel> logger/*, IHttpContextAccessor httpContextAccessor*/)
         {
             _logger = logger;
-            _httpContextAccessor = httpContextAccessor;
+            //_httpContextAccessor = httpContextAccessor;
 
-            token = _httpContextAccessor.HttpContext.Request.Cookies["token"];
+            //token = _httpContextAccessor.HttpContext.Request.Cookies["token"];
         }
 
         public void OnGet()

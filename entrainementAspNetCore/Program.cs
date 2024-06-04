@@ -1,5 +1,6 @@
 using entrainementAspNetCore.Data.Interface;
 using entrainementAspNetCore.Data.Service;
+using entrainementAspNetCore.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,12 @@ builder.Services.AddHttpClient();
 builder.Services.AddHttpClient("api", config =>
 {
     config.BaseAddress = new Uri("https://localhost:7197/");
-});
+}).AddHttpMessageHandler<TokenHandler>();
 
 builder.Services.AddScoped<IArticleRepository,ArticleService>();
 builder.Services.AddScoped<IUserRepository,UserService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddTransient<TokenHandler>();
 
 var app = builder.Build();
 

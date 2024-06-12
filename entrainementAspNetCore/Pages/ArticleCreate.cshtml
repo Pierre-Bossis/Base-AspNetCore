@@ -1,0 +1,50 @@
+﻿@page
+@model entrainementAspNetCore.Pages.ArticleCreateModel
+@{
+}
+<h2>Créer un article</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <input asp-for="File" type="file" name="File" class="form-control" /> 
+    <div class="mb-3">
+        <label asp-for="Form.Nom" class="form-label"></label>
+        <input asp-for="Form.Nom" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Description" class="form-label"></label>
+        <textarea asp-for="Form.Description" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Categorie" class="form-label"></label>
+        <input asp-for="Form.Categorie" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Quantite" class="form-label"></label>
+        <input asp-for="Form.Quantite" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Prix" class="form-label"></label>
+        <input asp-for="Form.Prix" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Poids" class="form-label"></label>
+        <input asp-for="Form.Poids" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Taille" class="form-label"></label>
+        <input asp-for="Form.Taille" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Provenance" class="form-label"></label>
+        <input asp-for="Form.Provenance" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Fournisseur" class="form-label"></label>
+        <input asp-for="Form.Fournisseur" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.MotsCles" class="form-label"></label>
+        <input asp-for="Form.MotsCles" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>

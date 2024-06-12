@@ -1,6 +1,7 @@
 using entrainementAspNetCore.Data.Interface;
 using entrainementAspNetCore.Data.Service;
 using entrainementAspNetCore.Tools;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

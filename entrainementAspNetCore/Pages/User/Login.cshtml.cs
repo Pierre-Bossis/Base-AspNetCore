@@ -10,14 +10,12 @@ namespace entrainementAspNetCore.Pages.User
     public class LoginModel : PageModel
     {
         private readonly IUserRepository _repository;
-        private readonly IJSRuntime _runtime;
 
         [BindProperty]
         public LoginForm Form { get; set; }
-        public LoginModel(IUserRepository repository, IJSRuntime runtime)
+        public LoginModel(IUserRepository repository)
         {
             _repository = repository;
-            _runtime = runtime;
         }
         public void OnGet()
         {

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using entrainementAspNetCore.Tools
+@inject IHttpContextAccessor httpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,6 +30,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/articleindex">Articles</a>
                         </li>
+                        @if (JwtDecode.IsUserAdmin(httpContextAccessor.HttpContext.Request.Cookies["token"]))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ArticleCreate">Créer Article</a>
+                            </li>
+                        }
                         @if(string.IsNullOrEmpty(Context.Request.Cookies["token"]))
                         {
                         <li class="nav-item">
